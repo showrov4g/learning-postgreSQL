@@ -26,4 +26,8 @@ VALUES
 
 
 
-SELECT country FROM student2 ORDER BY country ASC;
+SELECT * FROM student2;
+
+
+
+SELECT concat(first_name, ' ', ' ', last_name) FROM student2;
