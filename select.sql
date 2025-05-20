@@ -36,3 +36,14 @@ SELECT * FROM student2
 
 SELECT *FROM student2
     WHERE age BETWEEN 18 and 22
+
+
+SELECT * FROM student2 LIMIT 5 OFFSET 5 *0;
+
+
+DELETE FROM student2 where grade = 'C'
+
+
+SELECT *FROM student2;
+UPDATE student2 SET email = 'defultemail@gmail.com'
+ where student_id = 1;
