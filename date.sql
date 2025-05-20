@@ -1,21 +1,42 @@
-SHOW timezone;
+CREATE table "userx" (
+    id SERIAL PRIMARY KEY,
+    userName VARCHAR(25) NOT NULL
+);
 
-select now()
+CREATE table post (
+    id SERIAL PRIMARY KEY,
+    title TEXT not NULL,
+    user_id INTEGER REFERENCES "user" (id)
+)
+
+INSERT INTO
+    "userx" (userName)
+VALUES ('Alice'),
+    ('Bob'),
+    ('Charlie'),
+    ('David'),
+    ('Eva'),
+    ('Frank'),
+    ('Grace'),
+    ('Hannah'),
+    ('Ian'),
+    ('Jane');
+
+INSERT INTO
+    post (title, user_id)
+VALUES ('Post by Alice 1', 1),
+    ('Post by Bob 1', 2),
+    ('Post by Charlie 1', 3),
+    ('Post by Alice 2', 1),
+    ('Post by David 1', 4),
+    ('Post by Eva 1', 5),
+    ('Post by Bob 2', 2),
+    ('Post by Grace 1', 7),
+    ('Post by Ian 1', 9),
+    ('Post by Jane 1', 10);
 
 
-CREATE Table timez (ts TIMESTAMP Without time zone , tsz TIMESTAMP with time zone );
+select * FROM userx;
 
-insert into timez VALUES('2023-04-12 10:45', '2023-04-12 10:45');
-
-SELECT *FROM timez;
-
-select CURRENT_DATE;
-
-SELECT now() :: date;
-
-
-SELECT to_char(now(), 'yyy/mm/dd');
-
-SELECT CURRENT_DATE - INTERVAL '2 year';
-
-SELECT *, age(CURRENT_DATE, dob) FROM student2
+SELECT title, userName FROM post
+    JOIN "user" on post.user_id = "user".id
