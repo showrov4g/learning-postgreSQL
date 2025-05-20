@@ -30,4 +30,9 @@ SELECT * FROM student2;
 
 
 
-SELECT concat(first_name, ' ', ' ', last_name) FROM student2;
+SELECT * FROM student2
+    WHERE country in ('India')
+
+
+SELECT *FROM student2
+    WHERE age BETWEEN 18 and 22
