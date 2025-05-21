@@ -39,4 +39,8 @@ VALUES ('Post by Alice 1', 1),
 select * FROM userx;
 
 SELECT title, userName FROM post
-    JOIN "user" on post.user_id = "user".id
+    JOIN "user" on post.user_id = "user".id;
+
+
+SELECT * FROM post as p
+    LEFT JOIN "user" u ON p.user_id = u.id;
