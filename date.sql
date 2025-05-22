@@ -43,4 +43,7 @@ SELECT title, userName FROM post
 
 
 SELECT * FROM post as p
-    LEFT JOIN "user" u ON p.user_id = u.id;
+    LEFT OUTER JOIN "user" u ON p.user_id = u.id;
+
+SELECT * FROM post as p
+    FULL  JOIN "user" u ON p.user_id = u.id;
